@@ -15,6 +15,7 @@ export async function GET(_request: NextRequest) {
 
     return NextResponse.json({ data: methodology }, { status: 200 });
   } catch (error: unknown) {
+    console.error('SERVER ERROR: /api/audit/methodology', error);
     return NextResponse.json({ error }, { status: 500 });
   }
 }

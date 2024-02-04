@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({ data: cidlYaml }, { status: 200 });
     } catch (error: unknown) {
+      console.error('SERVER ERROR: /api/codigo', error);
       return NextResponse.json({ error }, { status: 500 });
     }
   }

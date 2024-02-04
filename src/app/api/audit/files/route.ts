@@ -44,6 +44,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({ data: filePaths }, { status: 200 });
     } catch (error: unknown) {
+      console.error('SERVER ERROR: /api/audit/files', error);
       return NextResponse.json({ error }, { status: 500 });
     }
   }

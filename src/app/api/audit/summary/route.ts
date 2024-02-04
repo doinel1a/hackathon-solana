@@ -73,6 +73,7 @@ export async function POST(request: NextRequest) {
 
       return NextResponse.json({ data: summary }, { status: 200 });
     } catch (error: unknown) {
+      console.error('SERVER ERROR: /api/audit/summary', error);
       return NextResponse.json({ error }, { status: 500 });
     }
   }

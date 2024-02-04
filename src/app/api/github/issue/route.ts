@@ -44,6 +44,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ data: issueResponse.data.html_url }, { status: 201 });
   } catch (error: unknown) {
+    console.error('SERVER ERROR: /api/github/issue', error);
     return NextResponse.json({ error }, { status: 500 });
   }
 }

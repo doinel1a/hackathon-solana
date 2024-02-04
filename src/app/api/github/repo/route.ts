@@ -48,6 +48,7 @@ export async function POST(request: NextRequest) {
       { status: contentResponse.status }
     );
   } catch (error: unknown) {
+    console.error('SERVER ERROR: /api/github/repo', error);
     return NextResponse.json({ error }, { status: 500 });
   }
 }

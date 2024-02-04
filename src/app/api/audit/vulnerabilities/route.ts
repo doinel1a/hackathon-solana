@@ -62,6 +62,7 @@ export async function POST(request: NextRequest) {
         { status: fileContentResponse.status }
       );
     } catch (error: unknown) {
+      console.error('SERVER ERROR: /api/audit/vulnerabilities', error);
       return NextResponse.json({ error }, { status: 500 });
     }
   }
